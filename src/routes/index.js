@@ -3,6 +3,7 @@ import config from "../config";
 import middleware from "../middleware";
 import initializeDb from "../db";
 import todo from "../controller/todo";
+import account from "../controller/account";
 
 let router = express();
 
@@ -15,7 +16,8 @@ initializeDb(db => {
 
     //api routes v1 /(v1)
 
-    router.use("/todo", todo({config, db}))
+    router.use("/todo", todo({ config, db }));
+    router.use("/account", account({ config, db }));
 });
 
 export default router;
