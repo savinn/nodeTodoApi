@@ -21,6 +21,11 @@ app.use(bodyParser.json({
 }))
 
 
+
+
+app.server.listen(config.port);
+console.log(`Started on port ${app.server.address().port}`);
+
 //passport config
 app.use(passport.initialize());
 let Account = require("./model/account");
@@ -36,8 +41,4 @@ passport.deserializeUser(Account.deserializeUser());
 
 //api routes v1
 app.use("/v1", routes);
-
-app.server.listen(config.port);
-console.log(`Started on port ${app.server.address().port}`);
-
 export default app;

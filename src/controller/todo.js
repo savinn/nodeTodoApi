@@ -3,11 +3,13 @@ import mongoose from "mongoose";
 import { Router } from "express";
 import ToDo from "../model/todo";
 
+import {authenticate} from "../middleware/authmiddleware";
+
 export default ({ config, db }) => {
     let api = Router();
 
     //"/v1/todo/add"
-    api.post("/add", (req, res) => {
+    api.post("/add", authenticate,(req, res) => {
         let newToDo = new ToDo();
         newToDo.title = req.body.title;
 
@@ -19,7 +21,7 @@ export default ({ config, db }) => {
         });
     });
 
-    api.get("/", (req, res) => {
+    api.get("/", authenticate,(req, res) => {
         ToDo.find({}, (err, todo) => {
             if (err) {
                 res.send(err);
@@ -28,7 +30,7 @@ export default ({ config, db }) => {
         });
     });
 
-    api.get("/:id", (req, res) => {
+    api.get("/:id", authenticate,(req, res) => {
         ToDo.findById(req.params.id, (err, todo) => {
             if (err) {
                 res.send(err);
@@ -37,7 +39,7 @@ export default ({ config, db }) => {
         });
     });
 
-    api.put("/:id", (req, res) => {
+    api.put("/:id",authenticate, (req, res) => {
         ToDo.findById(req.params.id, (err, todo) => {
             if (err) {
                 res.send(err);
@@ -52,7 +54,7 @@ export default ({ config, db }) => {
         });
     });
 
-    api.delete("/:id", (req, res) => {
+    api.delete("/:id",authenticate, (req, res) => {
         ToDo.remove({
             _id: req.params.id
         }, (err, todo) => {
