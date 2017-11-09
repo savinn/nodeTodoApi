@@ -1,0 +1,207 @@
+{
+	"info": {
+		"name": "todo",
+		"_postman_id": "55773a5c-51b6-69df-0b06-ae93912332b0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3005/v1/todo/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"My very last todo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/v1/todo/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"v1",
+						"todo",
+						"add"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3005/v1/todo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3005/v1/todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"v1",
+						"todo"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3005/v1/todo/59fc6f1c55d48416d860ce1b",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3005/v1/todo/59fc6f1c55d48416d860ce1b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"v1",
+						"todo",
+						"59fc6f1c55d48416d860ce1b"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3005/v1/todo/59fc6f1c55d48416d860ce1b",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"My very boo todo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/v1/todo/59fc6f1c55d48416d860ce1b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"v1",
+						"todo",
+						"59fc6f1c55d48416d860ce1b"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3005/v1/account/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"something@something.com\",\n\t\"password\": \"hello123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/v1/account/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"v1",
+						"account",
+						"register"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3005/v1/account/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"something@something.com\",\n\t\"password\": \"hello123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/v1/account/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"v1",
+						"account",
+						"login"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3005/v1/account/me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5ZmNhNjAxOGU4ZTM1MjliMDBjMDhhYyIsImlhdCI6MTUwOTczMDAxMCwiZXhwIjoxNTEyMzIyMDEwfQ.nMzG2zb772ZH_5WLksX_q-er1sRVQT41W7qhXS05p48"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3005/v1/account/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"v1",
+						"account",
+						"me"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
